@@ -1,0 +1,12 @@
+{
+  "name": "findu-lost-found",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FindU campus lost and found website with AI identity verification",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
