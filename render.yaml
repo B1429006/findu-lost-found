@@ -5,8 +5,23 @@ services:
     plan: free
     buildCommand: npm install
     startCommand: npm start
+    healthCheckPath: /api/lost-items
     envVars:
+      - key: NODE_VERSION
+        value: 24.22.3
       - key: OPENAI_API_KEY
+        sync: false
+      - key: BOT_API_TOKEN
         sync: false
       - key: OPENAI_MODEL
         value: gpt-5.5
+      - key: DATABASE_URL
+        fromDatabase:
+          name: findu-postgres
+          property: connectionString
+
+databases:
+  - name: findu-postgres
+    plan: free
+    databaseName: findu
+    user: findu
